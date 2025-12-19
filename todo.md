@@ -181,3 +181,10 @@
 - [x] Create Privacy Policy page component
 - [x] Update routing to include new legal pages
 - [x] Test and verify all information is accurate
+
+## Phase 25: Create Fair Play Policy and Responsible Gaming Pages
+- [x] Design and write comprehensive Fair Play Policy content
+- [x] Design and write comprehensive Responsible Gaming content
+- [x] Create Fair Play Policy page component
+- [x] Create Responsible Gaming page component
+- [x] Test and verify all information is accurate
