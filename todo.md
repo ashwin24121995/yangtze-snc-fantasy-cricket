@@ -152,3 +152,10 @@
 - [x] Write comprehensive content with crystal-clear explanations
 - [x] Update About page with new detailed content
 - [x] Test and verify all information is accurate
+
+## Phase 21: Create Comprehensive How To Play Page
+- [x] Read current How To Play page content
+- [x] Design detailed sections covering all gameplay aspects
+- [x] Write comprehensive guide with crystal-clear instructions
+- [x] Update How To Play page with new detailed content
+- [x] Test and verify all information is accurate
