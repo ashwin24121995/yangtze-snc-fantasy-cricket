@@ -173,3 +173,11 @@
 - [x] Create functional email contact form
 - [x] Add office addresses and contact information
 - [x] Test and verify all information is accurate
+
+## Phase 24: Create Terms & Conditions and Privacy Policy Pages
+- [x] Design and write comprehensive Terms & Conditions content
+- [x] Design and write comprehensive Privacy Policy content
+- [x] Create Terms & Conditions page component
+- [x] Create Privacy Policy page component
+- [x] Update routing to include new legal pages
+- [x] Test and verify all information is accurate
