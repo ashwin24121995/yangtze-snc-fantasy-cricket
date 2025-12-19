@@ -72,3 +72,10 @@
 - [ ] Documentation
 - [ ] User guide
 - [ ] Admin guide
+
+## Phase 11: Real-Time Score Updates
+- [x] Create background job to fetch live match scores
+- [x] Update team points automatically during live matches
+- [x] Set up cron scheduler for periodic updates
+- [x] Test score update accuracy
+- [x] Verify leaderboard updates in real-time
