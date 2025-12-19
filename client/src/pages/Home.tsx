@@ -115,7 +115,7 @@ export default function Home() {
                     <CardDescription>Real-time score tracking</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <img src="/cricket-celebration.jpg" alt="Live Match" className="w-full h-32 object-cover rounded-lg" />
+                    <img src="/hero-cricket-six.jpg" alt="Live Match" className="w-full h-32 object-cover rounded-lg" />
                   </CardContent>
                 </Card>
               </div>

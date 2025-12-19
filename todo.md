@@ -188,3 +188,8 @@
 - [x] Create Fair Play Policy page component
 - [x] Create Responsible Gaming page component
 - [x] Test and verify all information is accurate
+
+## Phase 26: Update Live Updates Hero Image
+- [x] Generate new cricket action image (batsman hitting a six)
+- [x] Replace old Live Updates image in Home page
+- [x] Test and verify new image displays correctly
