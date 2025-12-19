@@ -366,8 +366,8 @@ export default function Home() {
             <div className="animate-slide-in-left">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-purple-500/20">
                 <img
-                  src="/section-mission.jpg"
-                  alt="Our Mission"
+                  src="/mission-tech-cricket.jpg"
+                  alt="Our Mission - Technology Powered Cricket Education"
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
