@@ -193,3 +193,15 @@
 - [x] Generate new cricket action image (batsman hitting a six)
 - [x] Replace old Live Updates image in Home page
 - [x] Test and verify new image displays correctly
+
+## Phase 27: Update Live Updates Card Text
+- [ ] Change title from "Live Updates" to "Completely Free to Play"
+- [ ] Change description from "Real-time score tracking" to "Build your team"
+- [ ] Keep the red pulsing LIVE badge
+- [ ] Test and verify new text displays correctly
+
+## Phase 27: Update Live Updates Card Text and Badge
+- [x] Change badge from "LIVE" to "FREE"
+- [x] Change title from "Live Updates" to "Completely Free to Play"
+- [x] Change description from "Real-time score tracking" to "Build your team"
+- [x] Test and verify new text displays correctly

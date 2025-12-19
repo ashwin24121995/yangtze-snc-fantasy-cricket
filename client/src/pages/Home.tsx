@@ -108,11 +108,11 @@ export default function Home() {
                 <Card className="bg-card/80 backdrop-blur-md border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
                   <CardHeader>
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="h-2 w-2 bg-red-500 rounded-full animate-pulse"></div>
-                      <span className="text-xs font-semibold text-red-500">LIVE</span>
+                      <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs font-semibold text-green-500">FREE</span>
                     </div>
-                    <CardTitle className="text-lg">Live Updates</CardTitle>
-                    <CardDescription>Real-time score tracking</CardDescription>
+                    <CardTitle className="text-lg">Completely Free to Play</CardTitle>
+                    <CardDescription>Build your team</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <img src="/hero-cricket-six.jpg" alt="Live Match" className="w-full h-32 object-cover rounded-lg" />
