@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { appRouter } from "./routers";
-import { COOKIE_NAME } from "../shared/const";
+import { AUTH_COOKIE_NAME } from "../shared/auth";
 import type { TrpcContext } from "./_core/context";
+
+const COOKIE_NAME = AUTH_COOKIE_NAME;
 
 type CookieCall = {
   name: string;
