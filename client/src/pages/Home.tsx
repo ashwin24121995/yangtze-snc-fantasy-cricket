@@ -252,7 +252,7 @@ export default function Home() {
                 icon: Shield,
                 title: "Safe & Compliant",
                 description: "Government compliant platform with age verification and state restrictions for responsible gaming.",
-                image: "/trust-badge.png",
+                image: "/feature-compliance.png",
                 color: "green-500",
               },
               {
@@ -373,10 +373,10 @@ export default function Home() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {[
-                { label: "Secure Platform", icon: "/trust-badge.png" },
-                { label: "18+ Verified", icon: "/trust-badge.png" },
-                { label: "Govt. Compliant", icon: "/trust-badge.png" },
-                { label: "Fair Play", icon: "/trust-badge.png" },
+                { label: "Secure Platform", icon: "/badge-secure.png" },
+                { label: "18+ Verified", icon: "/badge-18plus.png" },
+                { label: "Govt. Compliant", icon: "/badge-govt.png" },
+                { label: "Fair Play", icon: "/badge-fairplay.png" },
               ].map((badge, idx) => (
                 <div
                   key={idx}

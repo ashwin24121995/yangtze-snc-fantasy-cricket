@@ -97,3 +97,11 @@
 - [x] Add statistics section
 - [x] Add call-to-action sections
 - [x] Optimize images and performance
+
+## Phase 14: Update Homepage Images
+- [x] Generate unique badge image for "Secure Platform"
+- [x] Generate unique badge image for "18+ Verified"
+- [x] Generate unique badge image for "Govt. Compliant"
+- [x] Generate unique badge image for "Fair Play"
+- [x] Generate new image for "Safe & Compliant" feature card
+- [x] Update homepage to use new images
