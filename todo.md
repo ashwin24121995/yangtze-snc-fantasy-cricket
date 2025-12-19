@@ -125,3 +125,18 @@
 - [x] Restore original hero section design
 - [x] Redesign "How It Works" section as content-focused without right image
 - [x] Make "How It Works" section a proper step-by-step form layout
+
+## Phase 17: Replace Images with User-Provided Cricket Photos
+- [ ] Copy user-provided cricket images to project
+- [ ] Replace logo with first image
+- [ ] Update homepage hero section background image
+- [ ] Update feature card images with new cricket photos
+- [ ] Update section images throughout homepage
+
+## Phase 18: Replace Logo and Badge Images
+- [x] Replace old logo with new YANGTZE SNC logo image
+- [x] Replace Fair Play badge with new design
+- [x] Replace Responsible Gaming badge with new design
+- [x] Replace 18+ badge with new design
+- [x] Replace Secure Platform badge with new design
+- [x] Update all code references to use new image files

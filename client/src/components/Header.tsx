@@ -22,20 +22,12 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/">
-            <div className="flex items-center gap-3 cursor-pointer">
+            <div className="flex items-center cursor-pointer">
               <img
-                src="/logo_icon_only.png"
-                alt="YANGTZE SNC"
-                className="h-10 w-10"
+                src="/logo-main.png"
+                alt="YANGTZE SNC - Learn Fantasy Cricket"
+                className="h-12 w-auto"
               />
-              <div className="flex flex-col">
-                <span className="text-lg font-bold text-foreground">
-                  YANGTZE SNC
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  Learn Fantasy Cricket
-                </span>
-              </div>
             </div>
           </Link>
 

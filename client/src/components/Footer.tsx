@@ -10,17 +10,17 @@ export default function Footer() {
         <div className="container">
           <div className="flex flex-wrap justify-center items-center gap-8">
             <img
-              src="/badge_18_plus.png"
+              src="/badge-18-plus.png"
               alt="18+ Only"
               className="h-16 w-auto"
             />
             <img
-              src="/badge_fair_play.png"
+              src="/badge-fair-play.png"
               alt="Fair Play"
               className="h-16 w-auto"
             />
             <img
-              src="/badge_responsible_gaming.png"
+              src="/badge-responsible-gaming.png"
               alt="Responsible Gaming"
               className="h-16 w-auto"
             />
@@ -33,18 +33,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <img
-                src="/logo_icon_only.png"
-                alt="YANGTZE SNC"
-                className="h-10 w-10"
+                src="/logo-main.png"
+                alt="YANGTZE SNC - Learn Fantasy Cricket"
+                className="h-16 w-auto"
               />
-              <div>
-                <h3 className="font-bold text-foreground">YANGTZE SNC</h3>
-                <p className="text-xs text-muted-foreground">
-                  Learn Fantasy Cricket
-                </p>
-              </div>
             </div>
             <p className="text-sm text-muted-foreground">
               Educational fantasy cricket platform for skill development and

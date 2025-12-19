@@ -724,9 +724,9 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {[
                 { label: "Secure Platform", icon: "/badge-secure.png" },
-                { label: "18+ Verified", icon: "/badge-18plus.png" },
-                { label: "Govt. Compliant", icon: "/badge-govt.png" },
-                { label: "Fair Play", icon: "/badge-fairplay.png" },
+                { label: "18+ Verified", icon: "/badge-18-plus.png" },
+                { label: "Fair Play", icon: "/badge-fair-play.png" },
+                { label: "Responsible Gaming", icon: "/badge-responsible-gaming.png" },
               ].map((badge, idx) => (
                 <div
                   key={idx}
