@@ -6,6 +6,7 @@ import { Link, useLocation, useParams } from "wouter";
 import { ArrowLeft, Users, Trophy, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { LiveIndicator } from "@/components/LiveIndicator";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -29,6 +30,9 @@ export default function BuildTeam() {
     { matchId: matchId! },
     { enabled: !!matchId }
   );
+
+  // Get live players
+  const { data: livePlayers = [] } = trpc.fantasy.getLivePlayers.useQuery();
 
   const [selectedPlayers, setSelectedPlayers] = useState<SelectedPlayer[]>([]);
   const [captainId, setCaptainId] = useState<string>("");
@@ -237,8 +241,11 @@ export default function BuildTeam() {
                           >
                             <div className="flex items-start justify-between gap-2">
                               <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 flex-wrap">
                                   <p className="font-medium text-sm truncate">{player.name}</p>
+                                  {livePlayers.includes(player.id) && (
+                                    <LiveIndicator size="sm" showText={false} />
+                                  )}
                                   {isSelected && (
                                     <Check className="h-4 w-4 text-primary flex-shrink-0" />
                                   )}

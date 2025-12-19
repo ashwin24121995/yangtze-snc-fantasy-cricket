@@ -6,6 +6,7 @@ import { Link, useLocation } from "wouter";
 import { Trophy, Users, TrendingUp, Plus } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { LiveIndicator } from "@/components/LiveIndicator";
 
 export default function Dashboard() {
   const { user, loading, isAuthenticated } = useAuth();
@@ -13,6 +14,9 @@ export default function Dashboard() {
   const { data: myTeams, isLoading: teamsLoading } = trpc.fantasy.getMyTeams.useQuery(undefined, {
     enabled: isAuthenticated,
   });
+
+  // Get live matches to show live indicators
+  const { data: liveMatches = [] } = trpc.fantasy.getLiveMatches.useQuery();
 
   if (loading) {
     return (
@@ -128,7 +132,12 @@ export default function Dashboard() {
               {myTeams.map((team) => (
                 <Card key={team.id} className="border-primary/20 bg-card/50 backdrop-blur">
                   <CardHeader>
-                    <CardTitle className="text-lg">{team.teamName}</CardTitle>
+                    <div className="flex items-center justify-between gap-2">
+                      <CardTitle className="text-lg">{team.teamName}</CardTitle>
+                      {liveMatches.some((m) => m.id === team.apiMatchId) && (
+                        <LiveIndicator size="sm" />
+                      )}
+                    </div>
                     <CardDescription className="text-xs">{team.matchName}</CardDescription>
                   </CardHeader>
                   <CardContent>

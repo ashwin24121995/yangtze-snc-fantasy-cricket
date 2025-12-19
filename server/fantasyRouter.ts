@@ -175,6 +175,35 @@ export const fantasyRouter = router({
     }),
 
   /**
+   * Get live players (players currently in ongoing matches)
+   */
+  getLivePlayers: publicProcedure.query(async () => {
+    try {
+      const liveMatches = await getLiveMatches();
+      const livePlayerIds = new Set<string>();
+
+      // Get all players from live matches
+      for (const match of liveMatches) {
+        try {
+          const squad = await getMatchSquad(match.id);
+          squad.forEach((team) => {
+            team.players.forEach((player) => {
+              livePlayerIds.add(player.id);
+            });
+          });
+        } catch (error) {
+          console.error(`Error fetching squad for match ${match.id}:`, error);
+        }
+      }
+
+      return Array.from(livePlayerIds);
+    } catch (error) {
+      console.error("Error getting live players:", error);
+      return [];
+    }
+  }),
+
+  /**
    * Get leaderboard for a match
    */
   getMatchLeaderboard: publicProcedure

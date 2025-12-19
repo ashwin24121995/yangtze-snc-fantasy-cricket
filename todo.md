@@ -79,3 +79,11 @@
 - [x] Set up cron scheduler for periodic updates
 - [x] Test score update accuracy
 - [x] Verify leaderboard updates in real-time
+
+## Phase 12: Live Player Indicators
+- [x] Create backend endpoint to get live players
+- [x] Add live indicator badge component
+- [x] Display live indicators on team building page
+- [x] Display live indicators on dashboard
+- [x] Add pulsing animation for live indicator
+- [x] Test live indicator accuracy
