@@ -119,3 +119,9 @@
 - [x] Create Platform Features section with right image
 - [x] Create Fair Play Commitment section with left image
 - [x] Create FAQ section with right image
+
+## Phase 16: Fix Homepage Issues
+- [x] Remove fake statistics section (10,000+ players, etc.)
+- [x] Restore original hero section design
+- [x] Redesign "How It Works" section as content-focused without right image
+- [x] Make "How It Works" section a proper step-by-step form layout

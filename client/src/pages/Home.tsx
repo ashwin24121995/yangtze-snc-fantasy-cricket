@@ -213,93 +213,145 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works + Scoring System Section - Image Right */}
+      {/* How It Works Section - Content Focused */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-card/30 to-background"></div>
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Content */}
-            <div className="space-y-6 animate-slide-in-left order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+          <div className="max-w-4xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-12 animate-fade-in">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
                 <Lightbulb className="h-4 w-4 text-cyan-500" />
                 <span className="text-sm font-semibold text-cyan-500">How It Works</span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 <span className="bg-gradient-to-r from-cyan-500 to-primary bg-clip-text text-transparent">
                   Simple 4-Step Process
                 </span>
-                <br />
-                + Cricket Scoring System
               </h2>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Getting started is incredibly easy. Follow these four simple steps to begin your fantasy cricket journey and understand how players earn points based on real match performance.
+                Getting started is incredibly easy. Follow these four simple steps to begin your fantasy cricket journey.
               </p>
-
-              {/* Steps */}
-              <div className="space-y-4">
-                {[
-                  { num: "01", title: "Register Free", desc: "Create your account in 30 seconds - no payment required" },
-                  { num: "02", title: "Select Match", desc: "Choose from upcoming or live cricket matches" },
-                  { num: "03", title: "Build Team", desc: "Pick 11 players within 100 credits, choose captain (2x) & vice-captain (1.5x)" },
-                  { num: "04", title: "Track & Compete", desc: "Watch live scores update every 3 minutes and climb the leaderboard" },
-                ].map((step, idx) => (
-                  <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-card/50 border border-cyan-500/10 hover:border-cyan-500/30 transition-all">
-                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-cyan-500 to-primary flex items-center justify-center flex-shrink-0 shadow-lg shadow-cyan-500/50">
-                      <span className="text-lg font-bold text-white">{step.num}</span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg mb-1">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground">{step.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <Link href="/how-to-play">
-                <Button className="bg-gradient-to-r from-cyan-500 to-primary hover:from-cyan-600 hover:to-primary/90">
-                  View Complete Scoring Guide
-                  <BarChart3 className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
             </div>
 
-            {/* Right - Image */}
-            <div className="animate-slide-in-right order-1 lg:order-2">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/20 border border-cyan-500/20">
-                <img
-                  src="/section-scoring.jpg"
-                  alt="Cricket Scoring System"
-                  className="w-full h-[600px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <Card className="bg-card/90 backdrop-blur-sm border-cyan-500/30">
-                    <CardHeader>
-                      <CardTitle className="text-lg">Quick Scoring Reference</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Runs:</span>
-                        <span className="font-semibold">1 point per run</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Wickets:</span>
-                        <span className="font-semibold">25 points each</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Catches:</span>
-                        <span className="font-semibold">8 points each</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Captain Bonus:</span>
-                        <span className="font-semibold text-primary">2x points</span>
-                      </div>
-                    </CardContent>
-                  </Card>
+            {/* Steps */}
+            <div className="space-y-6">
+              {[
+                { 
+                  num: "01", 
+                  title: "Register Free", 
+                  desc: "Create your account in 30 seconds. No payment required, no credit card needed. Just your basic information and you're ready to play.",
+                  icon: Users
+                },
+                { 
+                  num: "02", 
+                  title: "Select Match", 
+                  desc: "Browse upcoming and live cricket matches from international tournaments, domestic leagues, and T20 series. Choose the match you want to play.",
+                  icon: Target
+                },
+                { 
+                  num: "03", 
+                  title: "Build Your Dream Team", 
+                  desc: "Pick 11 players within 100 credits budget. Select 1-4 batsmen, 1-4 bowlers, 1-4 all-rounders, and 1 wicket-keeper. Choose your captain (2x points) and vice-captain (1.5x points).",
+                  icon: Trophy
+                },
+                { 
+                  num: "04", 
+                  title: "Track & Compete", 
+                  desc: "Watch your team's performance update in real-time every 3 minutes during the match. Climb the leaderboard as your players score runs, take wickets, and make catches.",
+                  icon: TrendingUp
+                },
+              ].map((step, idx) => (
+                <div key={idx} className="flex items-start gap-6 p-6 rounded-2xl bg-card/50 border border-cyan-500/10 hover:border-cyan-500/30 transition-all animate-slide-up" style={{ animationDelay: `${idx * 100}ms` }}>
+                  <div className="flex-shrink-0">
+                    <div className="h-16 w-16 rounded-full bg-gradient-to-br from-cyan-500 to-primary flex items-center justify-center shadow-lg shadow-cyan-500/50">
+                      <span className="text-2xl font-bold text-white">{step.num}</span>
+                    </div>
+                  </div>
+                  <div className="flex-1 pt-2">
+                    <div className="flex items-center gap-3 mb-3">
+                      <step.icon className="h-6 w-6 text-cyan-500" />
+                      <h3 className="font-bold text-xl">{step.title}</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Cricket Scoring System */}
+            <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-cyan-500/5 border border-primary/20">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                <BarChart3 className="h-6 w-6 text-primary" />
+                Cricket Scoring System
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-lg text-primary mb-3">Batting Points</h4>
+                  <div className="flex justify-between items-center p-3 rounded-lg bg-card/50">
+                    <span className="text-muted-foreground">Runs</span>
+                    <span className="font-semibold">1 point per run</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 rounded-lg bg-card/50">
+                    <span className="text-muted-foreground">Boundaries (4s)</span>
+                    <span className="font-semibold">1 bonus point</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 rounded-lg bg-card/50">
+                    <span className="text-muted-foreground">Sixes (6s)</span>
+                    <span className="font-semibold">2 bonus points</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 rounded-lg bg-card/50">
+                    <span className="text-muted-foreground">Strike Rate Bonus</span>
+                    <span className="font-semibold">2-4 points</span>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-lg text-cyan-500 mb-3">Bowling Points</h4>
+                  <div className="flex justify-between items-center p-3 rounded-lg bg-card/50">
+                    <span className="text-muted-foreground">Wickets</span>
+                    <span className="font-semibold">25 points each</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 rounded-lg bg-card/50">
+                    <span className="text-muted-foreground">Maiden Over</span>
+                    <span className="font-semibold">8 bonus points</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 rounded-lg bg-card/50">
+                    <span className="text-muted-foreground">Economy Rate Bonus</span>
+                    <span className="font-semibold">2-4 points</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 rounded-lg bg-card/50">
+                    <span className="text-muted-foreground">Catches/Stumping</span>
+                    <span className="font-semibold">8 points each</span>
+                  </div>
                 </div>
               </div>
+              <div className="mt-6 p-4 rounded-lg bg-primary/10 border border-primary/30">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Star className="h-5 w-5 text-primary" />
+                    <span className="font-semibold">Captain Bonus</span>
+                  </div>
+                  <span className="font-bold text-primary text-lg">2x Points</span>
+                </div>
+                <div className="flex items-center justify-between mt-3">
+                  <div className="flex items-center gap-2">
+                    <Star className="h-4 w-4 text-cyan-500" />
+                    <span className="font-semibold">Vice-Captain Bonus</span>
+                  </div>
+                  <span className="font-bold text-cyan-500 text-lg">1.5x Points</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <Link href="/how-to-play">
+                <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-primary hover:from-cyan-600 hover:to-primary/90">
+                  View Complete Scoring Guide
+                  <BarChart3 className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -651,28 +703,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-cyan-500/5"></div>
-        <div className="container relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { icon: Users, value: "10,000+", label: "Active Players" },
-              { icon: Trophy, value: "50,000+", label: "Teams Created" },
-              { icon: Target, value: "1,000+", label: "Matches Played" },
-              { icon: Award, value: "100%", label: "Free Forever" },
-            ].map((stat, idx) => (
-              <div key={idx} className="text-center space-y-2 animate-slide-up" style={{ animationDelay: `${idx * 100}ms` }}>
-                <stat.icon className="h-8 w-8 mx-auto text-primary mb-2" />
-                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Trust & Compliance Section */}
       <section className="py-20 relative overflow-hidden">
