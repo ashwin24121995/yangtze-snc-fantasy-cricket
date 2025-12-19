@@ -105,3 +105,17 @@
 - [x] Generate unique badge image for "Fair Play"
 - [x] Generate new image for "Safe & Compliant" feature card
 - [x] Update homepage to use new images
+
+## Phase 15: Add Detailed Homepage Sections
+- [x] Generate image for Why Choose Us section
+- [x] Generate image for Cricket Scoring System
+- [x] Generate image for Our Mission section
+- [x] Generate image for Platform Features
+- [x] Generate image for Fair Play Commitment
+- [x] Generate image for FAQ section
+- [x] Create Why Choose Us section with left image
+- [x] Create How It Works + Scoring System with right image
+- [x] Create Our Mission section with left image
+- [x] Create Platform Features section with right image
+- [x] Create Fair Play Commitment section with left image
+- [x] Create FAQ section with right image

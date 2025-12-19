@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Trophy, Users, Brain, Shield, Target, Zap, TrendingUp, Award, CheckCircle, Star } from "lucide-react";
+import { Trophy, Users, Brain, Shield, Target, Zap, TrendingUp, Award, CheckCircle, Star, Clock, BarChart3, Lock, Heart, HelpCircle, Lightbulb } from "lucide-react";
 
 export default function Home() {
   return (
@@ -51,123 +51,84 @@ export default function Home() {
                 </p>
               </div>
 
-              <p className="text-lg text-muted-foreground/80 max-w-xl leading-relaxed">
-                Build your dream team, compete with players nationwide, and learn the art of fantasy sports in a completely free, educational environment. No gambling, no pressure—just pure strategy and fun.
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Build your dream team, compete with players nationwide, and learn the art of fantasy sports in a completely free, educational
+                environment. No gambling, no pressure—just pure strategy and fun.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/register">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-lg px-8 py-6 shadow-lg shadow-primary/50 hover:shadow-primary/70 transition-all hover:scale-105"
-                  >
+                  <Button size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg shadow-primary/50 hover:shadow-primary/70 transition-all hover:scale-105">
                     Start Playing Free
                     <Zap className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link href="/how-to-play">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8 py-6 border-primary/50 hover:bg-primary/10 hover:border-primary transition-all"
-                  >
+                  <Button size="lg" variant="outline" className="border-primary/50 hover:bg-primary/10 hover:border-primary">
                     How It Works
                   </Button>
                 </Link>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="flex flex-wrap gap-6 pt-4">
-                <div className="flex items-center gap-2">
-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Shield className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">Secure Platform</p>
-                    <p className="text-xs text-muted-foreground">Govt. Compliant</p>
-                  </div>
+              {/* Trust Badges */}
+              <div className="flex flex-wrap gap-4 pt-4">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 backdrop-blur-sm border border-primary/20">
+                  <img src="/badge-18plus.png" alt="18+" className="h-6 w-6" />
+                  <span className="text-sm font-medium">18+ Only</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-12 w-12 rounded-lg bg-cyan-500/10 flex items-center justify-center">
-                    <Users className="h-6 w-6 text-cyan-500" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">18+ Only</p>
-                    <p className="text-xs text-muted-foreground">Age Verified</p>
-                  </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 backdrop-blur-sm border border-primary/20">
+                  <img src="/badge-fairplay.png" alt="Fair Play" className="h-6 w-6" />
+                  <span className="text-sm font-medium">Fair Play</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-12 w-12 rounded-lg bg-purple-500/10 flex items-center justify-center">
-                    <Trophy className="h-6 w-6 text-purple-500" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">Fair Play</p>
-                    <p className="text-xs text-muted-foreground">Certified</p>
-                  </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 backdrop-blur-sm border border-primary/20">
+                  <img src="/badge-govt.png" alt="Compliant" className="h-6 w-6" />
+                  <span className="text-sm font-medium">Govt. Compliant</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Side - Floating Cards with Real Cricket Images */}
-            <div className="relative h-[600px] hidden lg:block animate-slide-in-right">
-              {/* Card 1 - Top Right */}
-              <div className="absolute top-0 right-0 w-72 animate-float">
-                <Card className="border-primary/20 bg-card/80 backdrop-blur-xl shadow-2xl shadow-primary/20 overflow-hidden">
-                  <div className="h-40 overflow-hidden">
-                    <img
-                      src="/cricket-action-1.jpg"
-                      alt="Cricket Action"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent"></div>
-                  </div>
+            {/* Right Side - Floating Cards */}
+            <div className="relative h-[600px] animate-slide-in-right hidden lg:block">
+              {/* Build Team Card */}
+              <div className="absolute top-0 right-0 w-80 animate-float">
+                <Card className="bg-card/80 backdrop-blur-md border-primary/30 shadow-2xl shadow-primary/20">
+                  <img src="/cricket-action-1.jpg" alt="Build Team" className="h-48 w-full object-cover rounded-t-lg" />
                   <CardHeader>
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Target className="h-5 w-5 text-primary" />
+                    <CardTitle className="flex items-center gap-2">
+                      <Trophy className="h-5 w-5 text-primary" />
                       Build Your Team
                     </CardTitle>
-                    <CardDescription>Select 11 players within budget</CardDescription>
+                    <CardDescription>Select 11 players within 100 credits</CardDescription>
                   </CardHeader>
                 </Card>
               </div>
 
-              {/* Card 2 - Middle Left */}
-              <div className="absolute top-32 left-0 w-64 animate-float-delayed">
-                <Card className="border-cyan-500/20 bg-card/80 backdrop-blur-xl shadow-2xl shadow-cyan-500/20 overflow-hidden">
-                  <div className="h-32 overflow-hidden">
-                    <img
-                      src="/feature-live-scores.png"
-                      alt="Live Scores"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
+              {/* Live Updates Card */}
+              <div className="absolute top-32 left-0 w-72 animate-float-delayed">
+                <Card className="bg-card/80 backdrop-blur-md border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
                   <CardHeader>
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Zap className="h-5 w-5 text-cyan-500" />
-                      Live Updates
-                    </CardTitle>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="h-2 w-2 bg-red-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs font-semibold text-red-500">LIVE</span>
+                    </div>
+                    <CardTitle className="text-lg">Live Updates</CardTitle>
                     <CardDescription>Real-time score tracking</CardDescription>
                   </CardHeader>
+                  <CardContent>
+                    <img src="/cricket-celebration.jpg" alt="Live Match" className="w-full h-32 object-cover rounded-lg" />
+                  </CardContent>
                 </Card>
               </div>
 
-              {/* Card 3 - Bottom Right */}
-              <div className="absolute bottom-0 right-12 w-80 animate-float">
-                <Card className="border-purple-500/20 bg-card/80 backdrop-blur-xl shadow-2xl shadow-purple-500/20 overflow-hidden">
-                  <div className="h-44 overflow-hidden">
-                    <img
-                      src="/team-celebration.jpg"
-                      alt="Team Celebration"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent"></div>
-                  </div>
+              {/* Compete Card */}
+              <div className="absolute bottom-0 right-12 w-64 animate-float">
+                <Card className="bg-card/80 backdrop-blur-md border-purple-500/30 shadow-2xl shadow-purple-500/20">
                   <CardHeader>
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Trophy className="h-5 w-5 text-purple-500" />
+                    <CardTitle className="flex items-center gap-2 text-lg">
+                      <Award className="h-5 w-5 text-purple-500" />
                       Compete & Win
                     </CardTitle>
-                    <CardDescription>Climb the leaderboard ranks</CardDescription>
+                    <CardDescription>Climb the leaderboard</CardDescription>
                   </CardHeader>
                 </Card>
               </div>
@@ -176,28 +137,532 @@ export default function Home() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-primary rounded-full animate-scroll"></div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-scroll">
+          <div className="flex flex-col items-center gap-2 text-muted-foreground">
+            <span className="text-sm">Scroll to explore</span>
+            <div className="h-8 w-5 border-2 border-primary/50 rounded-full flex items-start justify-center p-1">
+              <div className="h-2 w-1 bg-primary rounded-full animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section - Image Left */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card/30"></div>
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Image */}
+            <div className="animate-slide-in-left">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-primary/20">
+                <img
+                  src="/section-why-choose.jpg"
+                  alt="Why Choose Us"
+                  className="w-full h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              </div>
+            </div>
+
+            {/* Right - Content */}
+            <div className="space-y-6 animate-slide-in-right">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                <Star className="h-4 w-4 text-primary" />
+                <span className="text-sm font-semibold text-primary">Why Choose YANGTZE SNC</span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">
+                  India's Most Trusted
+                </span>
+                <br />
+                Fantasy Cricket Platform
+              </h2>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We're revolutionizing fantasy cricket education in India by providing a completely free, safe, and skill-focused platform where aspiring cricket strategists can learn, practice, and master the art of team building without any financial risk.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  { icon: Shield, title: "100% Safe", desc: "No real money, no gambling" },
+                  { icon: Users, title: "10,000+ Players", desc: "Growing community" },
+                  { icon: Award, title: "Educational Focus", desc: "Learn cricket strategy" },
+                  { icon: CheckCircle, title: "Govt. Compliant", desc: "Fully legal platform" },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-card/50 border border-primary/10 hover:border-primary/30 transition-all">
+                    <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <Link href="/about">
+                <Button variant="outline" className="border-primary/50 hover:bg-primary/10">
+                  Learn More About Us
+                  <TrendingUp className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works + Scoring System Section - Image Right */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-card/30 to-background"></div>
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Content */}
+            <div className="space-y-6 animate-slide-in-left order-2 lg:order-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                <Lightbulb className="h-4 w-4 text-cyan-500" />
+                <span className="text-sm font-semibold text-cyan-500">How It Works</span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-cyan-500 to-primary bg-clip-text text-transparent">
+                  Simple 4-Step Process
+                </span>
+                <br />
+                + Cricket Scoring System
+              </h2>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Getting started is incredibly easy. Follow these four simple steps to begin your fantasy cricket journey and understand how players earn points based on real match performance.
+              </p>
+
+              {/* Steps */}
+              <div className="space-y-4">
+                {[
+                  { num: "01", title: "Register Free", desc: "Create your account in 30 seconds - no payment required" },
+                  { num: "02", title: "Select Match", desc: "Choose from upcoming or live cricket matches" },
+                  { num: "03", title: "Build Team", desc: "Pick 11 players within 100 credits, choose captain (2x) & vice-captain (1.5x)" },
+                  { num: "04", title: "Track & Compete", desc: "Watch live scores update every 3 minutes and climb the leaderboard" },
+                ].map((step, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-card/50 border border-cyan-500/10 hover:border-cyan-500/30 transition-all">
+                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-cyan-500 to-primary flex items-center justify-center flex-shrink-0 shadow-lg shadow-cyan-500/50">
+                      <span className="text-lg font-bold text-white">{step.num}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg mb-1">{step.title}</h3>
+                      <p className="text-sm text-muted-foreground">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <Link href="/how-to-play">
+                <Button className="bg-gradient-to-r from-cyan-500 to-primary hover:from-cyan-600 hover:to-primary/90">
+                  View Complete Scoring Guide
+                  <BarChart3 className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+
+            {/* Right - Image */}
+            <div className="animate-slide-in-right order-1 lg:order-2">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/20 border border-cyan-500/20">
+                <img
+                  src="/section-scoring.jpg"
+                  alt="Cricket Scoring System"
+                  className="w-full h-[600px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <Card className="bg-card/90 backdrop-blur-sm border-cyan-500/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Quick Scoring Reference</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Runs:</span>
+                        <span className="font-semibold">1 point per run</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Wickets:</span>
+                        <span className="font-semibold">25 points each</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Catches:</span>
+                        <span className="font-semibold">8 points each</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Captain Bonus:</span>
+                        <span className="font-semibold text-primary">2x points</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Mission Section - Image Left */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card/30"></div>
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Image */}
+            <div className="animate-slide-in-left">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-purple-500/20">
+                <img
+                  src="/section-mission.jpg"
+                  alt="Our Mission"
+                  className="w-full h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              </div>
+            </div>
+
+            {/* Right - Content */}
+            <div className="space-y-6 animate-slide-in-right">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
+                <Heart className="h-4 w-4 text-purple-500" />
+                <span className="text-sm font-semibold text-purple-500">Our Mission</span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-purple-500 to-primary bg-clip-text text-transparent">
+                  Empowering Cricket Minds
+                </span>
+                <br />
+                Through Education
+              </h2>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                At YANGTZE SNC, we believe fantasy cricket should be about learning, strategy, and passion for the game—not gambling or financial pressure. Our mission is to create India's largest educational fantasy cricket community where players develop analytical skills, cricket knowledge, and strategic thinking.
+              </p>
+
+              <div className="space-y-4">
+                <div className="p-4 rounded-xl bg-purple-500/5 border border-purple-500/20">
+                  <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+                    <Brain className="h-5 w-5 text-purple-500" />
+                    Skill Development Focus
+                  </h3>
+                  <p className="text-muted-foreground">
+                    We're backed by investors who believe in fantasy education and want users to learn cricket strategy without any financial burden. Every feature is designed to enhance your understanding of the game.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-purple-500/5 border border-purple-500/20">
+                  <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+                    <Target className="h-5 w-5 text-purple-500" />
+                    Entertainment & Education Only
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Winners are not rewarded with money—only recognition on the leaderboard. This keeps the focus on learning, improving, and enjoying the strategic aspects of cricket.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-purple-500/5 border border-purple-500/20">
+                  <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-purple-500" />
+                    Responsible Gaming Always
+                  </h3>
+                  <p className="text-muted-foreground">
+                    We enforce strict age verification (18+) and state restrictions to comply with Indian laws. Your safety and responsible gaming are our top priorities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Features Section - Image Right */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-card/30 to-background"></div>
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Content */}
+            <div className="space-y-6 animate-slide-in-left order-2 lg:order-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                <Zap className="h-4 w-4 text-primary" />
+                <span className="text-sm font-semibold text-primary">Platform Features</span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
+                  Powerful Features
+                </span>
+                <br />
+                For Better Learning
+              </h2>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Our platform is packed with advanced features designed to enhance your fantasy cricket experience and accelerate your learning curve.
+              </p>
+
+              <div className="grid gap-4">
+                {[
+                  {
+                    icon: Clock,
+                    title: "Real-Time Score Updates",
+                    desc: "Live match scores and player points updated automatically every 3 minutes during matches",
+                  },
+                  {
+                    icon: Users,
+                    title: "Live Player Indicators",
+                    desc: "See which players are currently in ongoing matches with pulsing 'LIVE' badges",
+                  },
+                  {
+                    icon: TrendingUp,
+                    title: "Dynamic Leaderboards",
+                    desc: "Global and match-specific rankings updated in real-time as matches progress",
+                  },
+                  {
+                    icon: BarChart3,
+                    title: "Performance Analytics",
+                    desc: "Track your team history, points trends, and strategic decisions over time",
+                  },
+                  {
+                    icon: Target,
+                    title: "Strategic Team Building",
+                    desc: "100-credit budget system with captain (2x) and vice-captain (1.5x) multipliers",
+                  },
+                  {
+                    icon: Shield,
+                    title: "Secure & Reliable",
+                    desc: "Enterprise-grade security with government compliance and data protection",
+                  },
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-card/50 border border-primary/10 hover:border-primary/30 transition-all group">
+                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <feature.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg mb-1">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground">{feature.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right - Image */}
+            <div className="animate-slide-in-right order-1 lg:order-2">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-primary/20">
+                <img
+                  src="/section-features.jpg"
+                  alt="Platform Features"
+                  className="w-full h-[700px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fair Play Commitment Section - Image Left */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card/30"></div>
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Image */}
+            <div className="animate-slide-in-left">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-green-500/20 border border-green-500/20">
+                <img
+                  src="/section-fairplay.jpg"
+                  alt="Fair Play Commitment"
+                  className="w-full h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              </div>
+            </div>
+
+            {/* Right - Content */}
+            <div className="space-y-6 animate-slide-in-right">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span className="text-sm font-semibold text-green-500">Fair Play Commitment</span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-green-500 to-cyan-500 bg-clip-text text-transparent">
+                  Transparency & Integrity
+                </span>
+                <br />
+                At Every Step
+              </h2>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We're committed to maintaining the highest standards of fair play, transparency, and ethical gaming practices. Our platform operates with complete integrity and government compliance.
+              </p>
+
+              <div className="space-y-4">
+                <Card className="bg-card/50 border-green-500/20">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-lg">
+                      <Lock className="h-5 w-5 text-green-500" />
+                      No Hidden Agendas
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      We never ask for money, never offer cash prizes, and never engage in any gambling activities. Our platform is 100% free and educational.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card/50 border-green-500/20">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-lg">
+                      <Shield className="h-5 w-5 text-green-500" />
+                      Government Compliant
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      We strictly enforce state restrictions (Andhra Pradesh, Assam, Nagaland, Odisha, Sikkim, Telangana) and age verification (18+) as per Indian laws.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card/50 border-green-500/20">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-lg">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      Equal Opportunity
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      Every player has equal access to all features, real-time data, and fair scoring. No pay-to-win mechanics, no unfair advantages.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <Link href="/fair-play">
+                <Button variant="outline" className="border-green-500/50 hover:bg-green-500/10">
+                  Read Full Fair Play Policy
+                  <CheckCircle className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Image Right */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-card/30 to-background"></div>
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Content */}
+            <div className="space-y-6 animate-slide-in-left order-2 lg:order-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                <HelpCircle className="h-4 w-4 text-cyan-500" />
+                <span className="text-sm font-semibold text-cyan-500">Frequently Asked Questions</span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-cyan-500 to-primary bg-clip-text text-transparent">
+                  Got Questions?
+                </span>
+                <br />
+                We've Got Answers
+              </h2>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Find quick answers to the most common questions about our platform, gameplay, and policies.
+              </p>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    q: "Is this platform really 100% free?",
+                    a: "Yes! There are no hidden costs, no deposits, no in-app purchases. Everything is completely free forever.",
+                  },
+                  {
+                    q: "Do winners get real money prizes?",
+                    a: "No. Winners are only shown on the leaderboard for recognition. This is an educational platform, not a gambling site.",
+                  },
+                  {
+                    q: "Who can play on this platform?",
+                    a: "Anyone 18 years or older can play, except residents of Andhra Pradesh, Assam, Nagaland, Odisha, Sikkim, and Telangana due to government regulations.",
+                  },
+                  {
+                    q: "How are points calculated?",
+                    a: "Points are based on real match performance: runs, wickets, catches, strike rate, economy rate, etc. Captain gets 2x points, vice-captain gets 1.5x points.",
+                  },
+                  {
+                    q: "How often do scores update?",
+                    a: "Live match scores and player points are automatically updated every 3 minutes during ongoing matches.",
+                  },
+                ].map((faq, idx) => (
+                  <Card key={idx} className="bg-card/50 border-cyan-500/10 hover:border-cyan-500/30 transition-all">
+                    <CardHeader>
+                      <CardTitle className="text-lg">{faq.q}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">{faq.a}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <Link href="/faq">
+                <Button className="bg-gradient-to-r from-cyan-500 to-primary hover:from-cyan-600 hover:to-primary/90">
+                  View All FAQs
+                  <HelpCircle className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+
+            {/* Right - Image */}
+            <div className="animate-slide-in-right order-1 lg:order-2">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/20 border border-cyan-500/20">
+                <img
+                  src="/section-why-choose.jpg"
+                  alt="FAQ Support"
+                  className="w-full h-[700px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <Card className="bg-card/90 backdrop-blur-sm border-cyan-500/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Need More Help?</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      <p className="text-sm text-muted-foreground">
+                        Can't find what you're looking for? Our support team is here to help!
+                      </p>
+                      <Link href="/contact">
+                        <Button size="sm" variant="outline" className="w-full border-cyan-500/50">
+                          Contact Support
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-b from-background to-card/30 animate-fade-in">
-        <div className="container">
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-cyan-500/5"></div>
+        <div className="container relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { label: "Active Players", value: "10,000+", icon: Users },
-              { label: "Matches Played", value: "50,000+", icon: Trophy },
-              { label: "Teams Created", value: "25,000+", icon: Target },
-              { label: "Learning Hours", value: "100,000+", icon: Brain },
+              { icon: Users, value: "10,000+", label: "Active Players" },
+              { icon: Trophy, value: "50,000+", label: "Teams Created" },
+              { icon: Target, value: "1,000+", label: "Matches Played" },
+              { icon: Award, value: "100%", label: "Free Forever" },
             ].map((stat, idx) => (
-              <div
-                key={idx}
-                className="text-center space-y-2 animate-slide-up"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
+              <div key={idx} className="text-center space-y-2 animate-slide-up" style={{ animationDelay: `${idx * 100}ms` }}>
                 <stat.icon className="h-8 w-8 mx-auto text-primary mb-2" />
                 <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">
                   {stat.value}
@@ -205,152 +670,6 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">{stat.label}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section with Images */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-card/30 to-background"></div>
-        <div className="container relative z-10">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-primary via-purple-500 to-cyan-500 bg-clip-text text-transparent">
-                Why Choose
-              </span>{" "}
-              YANGTZE SNC?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Experience fantasy cricket the right way - focused on learning, strategy, and pure entertainment
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Trophy,
-                title: "100% Free to Play",
-                description: "No hidden costs, no deposits, no real money involved. Pure educational fantasy cricket experience.",
-                image: "/feature-team-building.png",
-                color: "primary",
-              },
-              {
-                icon: Brain,
-                title: "Skill-Based Learning",
-                description: "Develop strategic thinking, player analysis, and team management skills through hands-on practice.",
-                image: "/feature-live-scores.png",
-                color: "cyan-500",
-              },
-              {
-                icon: Zap,
-                title: "Real-Time Updates",
-                description: "Live match scores, instant player points updates, and dynamic leaderboard rankings every 3 minutes.",
-                image: "/cricket-action-2.jpg",
-                color: "purple-500",
-              },
-              {
-                icon: Shield,
-                title: "Safe & Compliant",
-                description: "Government compliant platform with age verification and state restrictions for responsible gaming.",
-                image: "/feature-compliance.png",
-                color: "green-500",
-              },
-              {
-                icon: Users,
-                title: "Compete Nationwide",
-                description: "Join thousands of players across India, build your reputation, and climb the leaderboard.",
-                image: "/feature-leaderboard.png",
-                color: "yellow-500",
-              },
-              {
-                icon: Target,
-                title: "Strategic Gameplay",
-                description: "Choose captain (2x points) and vice-captain (1.5x points), manage 100-credit budget wisely.",
-                image: "/cricket-action-1.jpg",
-                color: "pink-500",
-              },
-            ].map((feature, idx) => (
-              <Card
-                key={idx}
-                className="group bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 animate-slide-up overflow-hidden"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <div className="h-48 overflow-hidden relative">
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"></div>
-                  <div className={`absolute top-4 right-4 h-12 w-12 rounded-lg bg-${feature.color}/20 backdrop-blur-sm flex items-center justify-center border border-${feature.color}/30`}>
-                    <feature.icon className={`h-6 w-6 text-${feature.color}`} />
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-card/30 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        </div>
-        <div className="container relative z-10">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How It <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">Works</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get started in 4 simple steps and start your fantasy cricket journey
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { step: "01", title: "Register Free", description: "Create your account with age and state verification", icon: Users },
-              { step: "02", title: "Select Match", description: "Choose from upcoming or live cricket matches", icon: Target },
-              { step: "03", title: "Build Team", description: "Pick 11 players, assign captain & vice-captain", icon: Trophy },
-              { step: "04", title: "Track & Compete", description: "Watch live scores and climb the leaderboard", icon: TrendingUp },
-            ].map((step, idx) => (
-              <div
-                key={idx}
-                className="relative animate-slide-up"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <div className="text-center space-y-4">
-                  <div className="relative inline-block">
-                    <div className="h-20 w-20 mx-auto rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center shadow-lg shadow-primary/50">
-                      <step.icon className="h-10 w-10 text-white" />
-                    </div>
-                    <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-cyan-500 flex items-center justify-center text-xs font-bold text-white">
-                      {step.step}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
-                </div>
-                {idx < 3 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent"></div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/register">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg shadow-primary/50 hover:shadow-primary/70 transition-all hover:scale-105">
-                Start Your Journey
-                <Zap className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
