@@ -212,3 +212,11 @@
 - [x] Design statistics section with three cards (Users, Contests, Teams)
 - [x] Add statistics section to homepage
 - [x] Test animations and verify data accuracy
+
+## Phase 29: Prepare Railway Deployment
+- [ ] Create Railway configuration file (railway.json)
+- [ ] Create .env.example with all required environment variables
+- [ ] Create DEPLOYMENT.md guide with Railway setup instructions
+- [ ] Create .gitignore file for proper git management
+- [ ] Initialize git repository and push to GitHub
+- [ ] Document OAuth callback URL changes needed for Railway
