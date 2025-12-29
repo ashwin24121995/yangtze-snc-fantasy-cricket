@@ -98,3 +98,47 @@ export function calculateAge(dateOfBirth: Date): number {
 }
 
 // TODO: add feature queries here as your schema grows.
+
+import { teams } from "../drizzle/schema";
+import { count } from "drizzle-orm";
+
+export async function getStatistics() {
+  const db = await getDb();
+  if (!db) {
+    // Return default values if database is not available
+    return {
+      totalUsers: 0,
+      activeContests: 0,
+      teamsCreated: 0,
+    };
+  }
+
+  try {
+    // Get total users count
+    const userCountResult = await db.select({ count: count() }).from(users);
+    const totalUsers = userCountResult[0]?.count || 0;
+
+    // Get active contests (unique matches with teams)
+    const activeContestsResult = await db
+      .selectDistinct({ apiMatchId: teams.apiMatchId })
+      .from(teams);
+    const activeContests = activeContestsResult.length;
+
+    // Get total teams created
+    const teamsCountResult = await db.select({ count: count() }).from(teams);
+    const teamsCreated = teamsCountResult[0]?.count || 0;
+
+    return {
+      totalUsers,
+      activeContests,
+      teamsCreated,
+    };
+  } catch (error) {
+    console.error("[Database] Failed to get statistics:", error);
+    return {
+      totalUsers: 0,
+      activeContests: 0,
+      teamsCreated: 0,
+    };
+  }
+}

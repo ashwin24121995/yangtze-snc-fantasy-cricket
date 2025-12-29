@@ -205,3 +205,10 @@
 - [x] Change title from "Live Updates" to "Completely Free to Play"
 - [x] Change description from "Real-time score tracking" to "Build your team"
 - [x] Test and verify new text displays correctly
+
+## Phase 28: Add Animated Statistics Counters
+- [x] Create animated counter component with smooth count-up animation
+- [x] Create tRPC endpoint to fetch real statistics (users, contests, teams)
+- [x] Design statistics section with three cards (Users, Contests, Teams)
+- [x] Add statistics section to homepage
+- [x] Test animations and verify data accuracy

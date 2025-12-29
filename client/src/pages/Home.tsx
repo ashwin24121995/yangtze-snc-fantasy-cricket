@@ -4,6 +4,44 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Trophy, Users, Brain, Shield, Target, Zap, TrendingUp, Award, CheckCircle, Star, Clock, BarChart3, Lock, Heart, HelpCircle, Lightbulb } from "lucide-react";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { trpc } from "@/lib/trpc";
+
+interface StatCardProps {
+  icon: React.ReactNode;
+  label: string;
+  stat: "totalUsers" | "activeContests" | "teamsCreated";
+  color: "primary" | "purple" | "cyan";
+}
+
+function StatCard({ icon, label, stat, color }: StatCardProps) {
+  const { data: stats } = trpc.statistics.getStats.useQuery();
+  const value = stats?.[stat] || 0;
+
+  const colorClasses = {
+    primary: "from-primary/20 to-primary/5 border-primary/30 text-primary",
+    purple: "from-purple-500/20 to-purple-500/5 border-purple-500/30 text-purple-500",
+    cyan: "from-cyan-500/20 to-cyan-500/5 border-cyan-500/30 text-cyan-500",
+  };
+
+  return (
+    <Card className={`bg-gradient-to-br ${colorClasses[color]} backdrop-blur-sm border-2 hover:scale-105 transition-transform duration-300 animate-fade-in`}>
+      <CardContent className="pt-6">
+        <div className="flex flex-col items-center text-center space-y-4">
+          <div className={`p-4 rounded-full bg-background/50 ${colorClasses[color]}`}>
+            {icon}
+          </div>
+          <div className="space-y-2">
+            <p className="text-4xl md:text-5xl font-bold">
+              <AnimatedCounter end={value} duration={2500} suffix="+" />
+            </p>
+            <p className="text-sm font-medium text-muted-foreground">{label}</p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function Home() {
   return (
@@ -143,6 +181,46 @@ export default function Home() {
             <div className="h-8 w-5 border-2 border-primary/50 rounded-full flex items-start justify-center p-1">
               <div className="h-2 w-1 bg-primary rounded-full animate-pulse"></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background"></div>
+        <div className="container relative z-10">
+          <div className="text-center mb-12 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+              <BarChart3 className="h-4 w-4 text-primary" />
+              <span className="text-sm font-semibold text-primary">Platform Statistics</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Join Our Growing <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">Community</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Thousands of cricket enthusiasts are already learning and competing on YANGTZE SNC
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <StatCard
+              icon={<Users className="h-8 w-8" />}
+              label="Registered Users"
+              stat="totalUsers"
+              color="primary"
+            />
+            <StatCard
+              icon={<Trophy className="h-8 w-8" />}
+              label="Active Contests"
+              stat="activeContests"
+              color="purple"
+            />
+            <StatCard
+              icon={<Zap className="h-8 w-8" />}
+              label="Teams Created"
+              stat="teamsCreated"
+              color="cyan"
+            />
           </div>
         </div>
       </section>
