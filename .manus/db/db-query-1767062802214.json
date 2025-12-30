@@ -1,0 +1,16 @@
+{
+  "query": "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME IN ('contests', 'contestEntries');",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2EKhjpwgmHfHvW4.352f8270eddc --database ciUByvDiKCHm49YzP6ucMd --execute SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME IN ('contests', 'contestEntries');",
+  "rows": [
+    {
+      "TABLE_NAME": "contestEntries"
+    },
+    {
+      "TABLE_NAME": "contests"
+    }
+  ],
+  "messages": [],
+  "stdout": "TABLE_NAME\ncontestEntries\ncontests\n",
+  "stderr": "",
+  "execution_time_ms": 1581
+}

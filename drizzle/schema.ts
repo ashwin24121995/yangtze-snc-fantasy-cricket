@@ -119,3 +119,36 @@ export type TeamPlayer = typeof teamPlayers.$inferSelect;
 export type InsertTeamPlayer = typeof teamPlayers.$inferInsert;
 export type PlayerPerformance = typeof playerPerformances.$inferSelect;
 export type InsertPlayerPerformance = typeof playerPerformances.$inferInsert;
+
+// Contests Table (Free-to-play educational contests)
+export const contests = mysqlTable("contests", {
+  id: int("id").autoincrement().primaryKey(),
+  apiMatchId: varchar("apiMatchId", { length: 255 }).notNull(), // Match this contest belongs to
+  contestName: varchar("contestName", { length: 255 }).notNull(),
+  contestType: mysqlEnum("contestType", ["public", "private"]).default("public").notNull(),
+  maxEntries: int("maxEntries").default(1000).notNull(), // Maximum participants
+  currentEntries: int("currentEntries").default(0).notNull(), // Current participant count
+  status: mysqlEnum("status", ["upcoming", "live", "completed", "cancelled"]).default("upcoming").notNull(),
+  startTime: timestamp("startTime").notNull(),
+  endTime: timestamp("endTime"),
+  description: text("description"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+// Contest Entries Table (tracks which teams joined which contests)
+export const contestEntries = mysqlTable("contestEntries", {
+  id: int("id").autoincrement().primaryKey(),
+  contestId: int("contestId").notNull().references(() => contests.id, { onDelete: "cascade" }),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+  teamId: int("teamId").notNull().references(() => teams.id, { onDelete: "cascade" }),
+  points: int("points").default(0).notNull(),
+  rank: int("rank"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Contest = typeof contests.$inferSelect;
+export type InsertContest = typeof contests.$inferInsert;
+export type ContestEntry = typeof contestEntries.$inferSelect;
+export type InsertContestEntry = typeof contestEntries.$inferInsert;

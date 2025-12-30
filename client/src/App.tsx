@@ -19,6 +19,8 @@ import Dashboard from "./pages/Dashboard";
 import Matches from "./pages/Matches";
 import BuildTeam from "./pages/BuildTeam";
 import Leaderboard from "./pages/Leaderboard";
+import Contests from "./pages/Contests";
+import ContestLeaderboard from "./pages/ContestLeaderboard";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -31,6 +33,8 @@ function Router() {
       <Route path={"/matches"} component={Matches} />
       <Route path={"/build-team/:matchId"} component={BuildTeam} />
       <Route path={"/leaderboard"} component={Leaderboard} />
+      <Route path={"/contests/:matchId"} component={Contests} />
+      <Route path={"/contests/:contestId/leaderboard"} component={ContestLeaderboard} />
       <Route path={"/about"} component={About} />
       <Route path={"/how-to-play"} component={HowToPlay} />
       <Route path={"/faq"} component={FAQ} />

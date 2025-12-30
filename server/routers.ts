@@ -2,6 +2,7 @@
 import { router, publicProcedure } from "./_core/trpc";
 import { authRouter } from "./auth";
 import { fantasyRouter } from "./fantasyRouter";
+import { contestRouter } from "./contestRouter";
 import { getStatistics } from "./db";
 
 export const appRouter = router({
@@ -9,6 +10,7 @@ export const appRouter = router({
 
   auth: authRouter,
   fantasy: fantasyRouter,
+  contest: contestRouter,
   
   statistics: router({
     getStats: publicProcedure.query(async () => {

@@ -220,3 +220,51 @@
 - [x] Verify .gitignore file exists for proper git management
 - [x] Initialize git repository and push to GitHub
 - [x] Document OAuth callback URL changes needed for Railway
+
+## Phase 30: Implement Credit System for Team Building
+- [ ] Add credits field to players table in database schema
+- [ ] Create function to assign realistic credit values to players (8.0-12.0 range)
+- [ ] Update player data fetching to include credits
+- [ ] Create credit calculation logic for team validation
+- [ ] Test credit system with sample data
+
+## Phase 31: Build Enhanced Team Creation UI
+- [x] Create multi-step team builder wizard component
+- [x] Add player list with role filters (WK, BAT, AR, BOW)
+- [x] Add credit counter display (100 total budget)
+- [x] Add role composition tracker (min/max per role)
+- [x] Implement player selection/deselection logic
+- [x] Add captain/vice-captain selection step
+- [x] Create team preview step before submission
+- [x] Add real-time validation messages
+- [x] Test complete team building flow
+
+## Phase 32: Implement Free Contest System (No Money)
+- [x] Add contests table to database schema (no entry fees or prize pools)
+- [x] Add contestEntries table for tracking user participation
+- [x] Create tRPC procedure to list free contests by match
+- [x] Create tRPC procedure to join contest with team
+- [x] Create tRPC procedure to get user's joined contests
+- [x] Build contest listing UI with educational focus
+- [x] Build join contest modal with team selection
+- [x] Add contest leaderboard view
+- [x] Test contest system end-to-end (9 tests passed)
+
+## Phase 33: Create Match Selection Flow
+- [x] Build dedicated matches listing page
+- [x] Add "Create Team" CTA buttons for each match
+- [x] Add "View Contests" buttons for each match
+- [x] Show user's existing teams for each match
+- [x] Create match detail view with squad info
+- [x] Add navigation from homepage to matches
+- [x] Test match selection user journey
+
+## Phase 34: Implement Team Management Features
+- [x] Create "My Teams" section in Dashboard showing all user teams
+- [x] Create "My Contests" section in Dashboard
+- [x] Add contest stats to Dashboard (contests joined)
+- [x] Support multiple teams per match
+- [x] Show team status (upcoming/live/completed) with live indicators
+- [ ] Add edit team functionality (before match starts)
+- [ ] Add delete team functionality
+- [ ] Test team management operations

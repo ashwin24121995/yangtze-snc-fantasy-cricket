@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link, useLocation } from "wouter";
-import { Calendar, MapPin, Trophy, Clock } from "lucide-react";
+import { Calendar, MapPin, Trophy, Clock, Users } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -105,12 +105,19 @@ export default function Matches() {
                             </div>
                           ))}
                         </div>
-                        <Link href={`/build-team/${match.id}`}>
-                          <Button className="w-full">
-                            <Trophy className="h-4 w-4 mr-2" />
-                            Create Team
-                          </Button>
-                        </Link>
+                        <div className="flex gap-2">
+                          <Link href={`/build-team/${match.id}`} className="flex-1">
+                            <Button className="w-full">
+                              <Trophy className="h-4 w-4 mr-2" />
+                              Create Team
+                            </Button>
+                          </Link>
+                          <Link href={`/contests/${match.id}`}>
+                            <Button variant="outline">
+                              <Users className="h-4 w-4" />
+                            </Button>
+                          </Link>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>

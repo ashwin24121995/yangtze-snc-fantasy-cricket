@@ -15,6 +15,10 @@ export default function Dashboard() {
     enabled: isAuthenticated,
   });
 
+  const { data: myContests, isLoading: contestsLoading } = trpc.contest.getMyContests.useQuery(undefined, {
+    enabled: isAuthenticated,
+  });
+
   // Get live matches to show live indicators
   const { data: liveMatches = [] } = trpc.fantasy.getLiveMatches.useQuery();
 
@@ -62,16 +66,12 @@ export default function Dashboard() {
 
           <Card className="border-primary/20 bg-card/50 backdrop-blur">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Best Rank</CardTitle>
-              <Trophy className="h-4 w-4 text-yellow-500" />
+              <CardTitle className="text-sm font-medium">Contests Joined</CardTitle>
+              <Trophy className="h-4 w-4 text-cyan-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
-                {myTeams && myTeams.length > 0
-                  ? Math.min(...myTeams.filter((t) => t.rank).map((t) => t.rank!))
-                  : "-"}
-              </div>
-              <p className="text-xs text-muted-foreground">Highest ranking achieved</p>
+              <div className="text-2xl font-bold">{myContests?.length || 0}</div>
+              <p className="text-xs text-muted-foreground">Free contests entered</p>
             </CardContent>
           </Card>
 
@@ -117,6 +117,64 @@ export default function Dashboard() {
               </Card>
             </Link>
           </div>
+        </div>
+
+        {/* My Contests */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">My Contests</h2>
+          {contestsLoading ? (
+            <div className="text-center py-8">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
+              <p className="text-muted-foreground text-sm">Loading contests...</p>
+            </div>
+          ) : myContests && myContests.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {myContests.slice(0, 6).map((contest) => (
+                <Card key={contest.entryId} className="border-primary/20 bg-card/50 backdrop-blur">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{contest.contestName}</CardTitle>
+                    <CardDescription className="text-xs">{contest.teamName}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-muted-foreground">Points:</span>
+                        <span className="font-bold text-primary">{contest.points}</span>
+                      </div>
+                      {contest.rank && (
+                        <div className="flex justify-between text-sm">
+                          <span className="text-muted-foreground">Rank:</span>
+                          <span className="font-bold text-yellow-500">#{contest.rank}</span>
+                        </div>
+                      )}
+                      <div className="flex justify-between text-sm">
+                        <span className="text-muted-foreground">Participants:</span>
+                        <span className="text-xs">{contest.currentEntries}/{contest.maxEntries}</span>
+                      </div>
+                      <Link href={`/contests/${contest.contestId}/leaderboard`}>
+                        <Button variant="outline" size="sm" className="w-full mt-2">
+                          View Leaderboard
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <Card className="border-primary/20 bg-card/50 backdrop-blur">
+              <CardContent className="py-8 text-center">
+                <Trophy className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <p className="text-muted-foreground mb-4">You haven't joined any contests yet</p>
+                <Link href="/matches">
+                  <Button>
+                    <Trophy className="h-4 w-4 mr-2" />
+                    Browse Contests
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          )}
         </div>
 
         {/* My Teams */}
