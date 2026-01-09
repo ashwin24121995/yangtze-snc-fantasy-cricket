@@ -282,3 +282,9 @@
 - [x] Create .env.example file with required variables
 - [x] Create comprehensive RAILWAY_DEPLOYMENT.md guide
 - [x] Prepare GitHub repository for Railway connection
+
+## Phase 36: Fix Railway Deployment Issues
+- [x] Replace import.meta.dirname with Node.js v18 compatible alternative
+- [x] Update server/_core/vite.ts for compatibility
+- [ ] Test build process
+- [ ] Push fix to GitHub
