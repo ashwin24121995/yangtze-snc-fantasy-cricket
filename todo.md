@@ -326,5 +326,5 @@
   - Removed manus-runtime-user-info localStorage
   - Changed loginMethod from "manus" to "email" in tests
   - Removed vite-plugin-manus-runtime from package.json
-- [ ] Test application without Manus code
-- [ ] Push changes to GitHub
+- [x] Test application without Manus code (verified working)
+- [x] Push changes to GitHub
