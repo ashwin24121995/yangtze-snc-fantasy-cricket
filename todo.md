@@ -328,3 +328,9 @@
   - Removed vite-plugin-manus-runtime from package.json
 - [x] Test application without Manus code (verified working)
 - [x] Push changes to GitHub
+
+## Phase 42: Implement Scroll-to-Top on Page Navigation
+- [x] Create ScrollToTop component
+- [x] Integrate with router in App.tsx
+- [ ] Test scroll behavior on page navigation
+- [ ] Push changes to GitHub
