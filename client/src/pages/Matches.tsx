@@ -98,7 +98,7 @@ export default function Matches() {
                                 alt={team.name}
                                 className="w-8 h-8 rounded-full object-cover"
                                 onError={(e) => {
-                                  e.currentTarget.src = "/logo_icon_only.png";
+                                  e.currentTarget.src = "/logo_icon_only.webp";
                                 }}
                               />
                               <span className="text-sm font-medium truncate">{team.shortname}</span>
@@ -174,7 +174,7 @@ export default function Matches() {
                                 alt={team.name}
                                 className="w-8 h-8 rounded-full object-cover"
                                 onError={(e) => {
-                                  e.currentTarget.src = "/logo_icon_only.png";
+                                  e.currentTarget.src = "/logo_icon_only.webp";
                                 }}
                               />
                               <span className="text-sm font-medium truncate">{team.shortname}</span>

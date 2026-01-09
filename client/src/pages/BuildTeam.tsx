@@ -346,7 +346,7 @@ export default function BuildTeam() {
                             alt={team.teamName}
                             className="w-10 h-10 rounded-full object-cover"
                             onError={(e) => {
-                              e.currentTarget.src = "/logo_icon_only.png";
+                              e.currentTarget.src = "/logo_icon_only.webp";
                             }}
                           />
                           <div>

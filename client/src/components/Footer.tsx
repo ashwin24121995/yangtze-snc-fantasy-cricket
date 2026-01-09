@@ -10,17 +10,17 @@ export default function Footer() {
         <div className="container">
           <div className="flex flex-wrap justify-center items-center gap-8">
             <img
-              src="/badge-18-plus.png"
+              src="/badge-18-plus.webp"
               alt="18+ Only"
               className="h-16 w-auto"
             />
             <img
-              src="/badge-fair-play.png"
+              src="/badge-fair-play.webp"
               alt="Fair Play"
               className="h-16 w-auto"
             />
             <img
-              src="/badge-responsible-gaming.png"
+              src="/badge-responsible-gaming.webp"
               alt="Responsible Gaming"
               className="h-16 w-auto"
             />
@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center">
               <img
-                src="/logo-main.png"
+                src="/logo-main.webp"
                 alt="YANGTZE SNC - Learn Fantasy Cricket"
                 className="h-16 w-auto"
               />

@@ -24,7 +24,7 @@ export default function Header() {
           <Link href="/">
             <div className="flex items-center cursor-pointer">
               <img
-                src="/logo-main.png"
+                src="/logo-main.webp"
                 alt="YANGTZE SNC - Learn Fantasy Cricket"
                 className="h-12 w-auto"
               />

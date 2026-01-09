@@ -54,7 +54,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-transparent"></div>
           <img
-            src="/hero-stadium-real.jpg"
+            src="/hero-stadium-real.webp"
             alt="Cricket Stadium"
             className="w-full h-full object-cover opacity-20 animate-slow-zoom"
           />
@@ -111,15 +111,15 @@ export default function Home() {
               {/* Trust Badges */}
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 backdrop-blur-sm border border-primary/20">
-                  <img src="/badge-18plus.png" alt="18+" className="h-6 w-6" />
+                  <img src="/badge-18plus.webp" alt="18+" className="h-6 w-6" />
                   <span className="text-sm font-medium">18+ Only</span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 backdrop-blur-sm border border-primary/20">
-                  <img src="/badge-fairplay.png" alt="Fair Play" className="h-6 w-6" />
+                  <img src="/badge-fairplay.webp" alt="Fair Play" className="h-6 w-6" />
                   <span className="text-sm font-medium">Fair Play</span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card/50 backdrop-blur-sm border border-primary/20">
-                  <img src="/badge-govt.png" alt="Compliant" className="h-6 w-6" />
+                  <img src="/badge-govt.webp" alt="Compliant" className="h-6 w-6" />
                   <span className="text-sm font-medium">Govt. Compliant</span>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export default function Home() {
               {/* Build Team Card */}
               <div className="absolute top-0 right-0 w-80 animate-float">
                 <Card className="bg-card/80 backdrop-blur-md border-primary/30 shadow-2xl shadow-primary/20">
-                  <img src="/cricket-action-1.jpg" alt="Build Team" className="h-48 w-full object-cover rounded-t-lg" />
+                  <img src="/cricket-action-1.webp" alt="Build Team" className="h-48 w-full object-cover rounded-t-lg" />
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Trophy className="h-5 w-5 text-primary" />
@@ -153,7 +153,7 @@ export default function Home() {
                     <CardDescription>Build your team</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <img src="/hero-cricket-six.jpg" alt="Live Match" className="w-full h-32 object-cover rounded-lg" />
+                    <img src="/hero-cricket-six.webp" alt="Live Match" className="w-full h-32 object-cover rounded-lg" />
                   </CardContent>
                 </Card>
               </div>
@@ -234,7 +234,7 @@ export default function Home() {
             <div className="animate-slide-in-left">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-primary/20">
                 <img
-                  src="/section-why-choose.jpg"
+                  src="/section-why-choose.webp"
                   alt="Why Choose Us"
                   className="w-full h-[500px] object-cover"
                 />
@@ -444,7 +444,7 @@ export default function Home() {
             <div className="animate-slide-in-left">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-purple-500/20">
                 <img
-                  src="/mission-tech-cricket.jpg"
+                  src="/mission-tech-cricket.webp"
                   alt="Our Mission - Technology Powered Cricket Education"
                   className="w-full h-[500px] object-cover"
                 />
@@ -581,7 +581,7 @@ export default function Home() {
             <div className="animate-slide-in-right order-1 lg:order-2">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-primary/20">
                 <img
-                  src="/section-features.jpg"
+                  src="/section-features.webp"
                   alt="Platform Features"
                   className="w-full h-[700px] object-cover"
                 />
@@ -601,7 +601,7 @@ export default function Home() {
             <div className="animate-slide-in-left">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-green-500/20 border border-green-500/20">
                 <img
-                  src="/section-fairplay.jpg"
+                  src="/section-fairplay.webp"
                   alt="Fair Play Commitment"
                   className="w-full h-[500px] object-cover"
                 />
@@ -753,7 +753,7 @@ export default function Home() {
             <div className="animate-slide-in-right order-1 lg:order-2">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/20 border border-cyan-500/20">
                 <img
-                  src="/section-why-choose.jpg"
+                  src="/section-why-choose.webp"
                   alt="FAQ Support"
                   className="w-full h-[700px] object-cover"
                 />
@@ -801,10 +801,10 @@ export default function Home() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {[
-                { label: "Secure Platform", icon: "/badge-secure.png" },
-                { label: "18+ Verified", icon: "/badge-18-plus.png" },
-                { label: "Fair Play", icon: "/badge-fair-play.png" },
-                { label: "Responsible Gaming", icon: "/badge-responsible-gaming.png" },
+                { label: "Secure Platform", icon: "/badge-secure.webp" },
+                { label: "18+ Verified", icon: "/badge-18-plus.webp" },
+                { label: "Fair Play", icon: "/badge-fair-play.webp" },
+                { label: "Responsible Gaming", icon: "/badge-responsible-gaming.webp" },
               ].map((badge, idx) => (
                 <div
                   key={idx}
@@ -839,7 +839,7 @@ export default function Home() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/hero-stadium-real.jpg"
+            src="/hero-stadium-real.webp"
             alt="Cricket Stadium"
             className="w-full h-full object-cover opacity-10"
           />
