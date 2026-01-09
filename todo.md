@@ -268,3 +268,17 @@
 - [ ] Add edit team functionality (before match starts)
 - [ ] Add delete team functionality
 - [ ] Test team management operations
+
+
+## Phase 35: Railway Deployment Migration
+- [x] Remove Manus OAuth authentication system (already using JWT)
+- [x] Implement standard JWT-based authentication (already implemented)
+- [x] Update login/register flows to use JWT tokens (already done)
+- [x] Remove Manus-specific environment variables (getLoginUrl updated)
+- [x] Update database configuration for external MySQL/PostgreSQL (compatible)
+- [x] Remove Manus built-in API dependencies (none found)
+- [x] Create Railway configuration files (railway.json, Procfile)
+- [x] Update package.json scripts for Railway deployment (already compatible)
+- [x] Create .env.example file with required variables
+- [x] Create comprehensive RAILWAY_DEPLOYMENT.md guide
+- [x] Prepare GitHub repository for Railway connection
