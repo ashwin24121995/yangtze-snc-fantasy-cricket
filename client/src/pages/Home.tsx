@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Trophy, Users, Brain, Shield, Target, Zap, TrendingUp, Award, CheckCircle, Star, Clock, BarChart3, Lock, Heart, HelpCircle, Lightbulb } from "lucide-react";
+import { Trophy, Users, Brain, Shield, Target, Zap, TrendingUp, Award, CheckCircle, Star, Clock, BarChart3, Lock, Heart, HelpCircle, Lightbulb, ArrowRight } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { trpc } from "@/lib/trpc";
 
@@ -185,42 +185,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Statistics Section */}
+      {/* Community Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background"></div>
         <div className="container relative z-10">
-          <div className="text-center mb-12 animate-fade-in">
+          <div className="text-center mb-16 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
-              <BarChart3 className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">Platform Statistics</span>
+              <Users className="h-4 w-4 text-primary" />
+              <span className="text-sm font-semibold text-primary">Join the Movement</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Join Our Growing <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">Community</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Thousands of cricket enthusiasts are already learning and competing on YANGTZE SNC
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <StatCard
-              icon={<Users className="h-8 w-8" />}
-              label="Registered Users"
-              stat="totalUsers"
-              color="primary"
-            />
-            <StatCard
-              icon={<Trophy className="h-8 w-8" />}
-              label="Active Contests"
-              stat="activeContests"
-              color="purple"
-            />
-            <StatCard
-              icon={<Zap className="h-8 w-8" />}
-              label="Teams Created"
-              stat="teamsCreated"
-              color="cyan"
-            />
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Learn & Compete Card */}
+              <div className="group relative p-8 rounded-2xl bg-gradient-to-br from-primary/10 via-purple-500/5 to-background border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative z-10">
+                  <div className="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Trophy className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Learn & Compete</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Master fantasy cricket strategy in a risk-free environment. Build teams, join contests, and compete with players nationwide.
+                  </p>
+                  <div className="flex items-center gap-2 text-primary font-semibold">
+                    <span>Start Playing Free</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Educational Platform Card */}
+              <div className="group relative p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-background border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative z-10">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Zap className="h-6 w-6 text-cyan-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">100% Educational</h3>
+                  <p className="text-muted-foreground mb-4">
+                    No real money, no gambling, no pressure. Focus purely on learning cricket strategy and improving your fantasy sports skills.
+                  </p>
+                  <div className="flex items-center gap-2 text-cyan-400 font-semibold">
+                    <span>Learn How It Works</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="text-center mt-12">
+              <Link href="/register">
+                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-purple-500 hover:from-primary/90 hover:to-purple-500/90">
+                  <Users className="mr-2 h-5 w-5" />
+                  Join the Community
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
