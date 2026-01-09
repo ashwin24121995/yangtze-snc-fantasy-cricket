@@ -315,3 +315,16 @@
 - [x] Regenerate favicon files using new logo
 - [x] Test new logo and favicon display (verified working)
 - [x] Push changes to GitHub
+
+## Phase 41: Remove All Manus-Specific Code
+- [x] Search for manus-runtime script tags
+- [x] Search for MANUS environment variables
+- [x] Search for manus-specific imports
+- [x] Remove all Manus-related code:
+  - Removed vitePluginManusRuntime from vite.config.ts
+  - Removed Manus domain references from allowedHosts
+  - Removed manus-runtime-user-info localStorage
+  - Changed loginMethod from "manus" to "email" in tests
+  - Removed vite-plugin-manus-runtime from package.json
+- [ ] Test application without Manus code
+- [ ] Push changes to GitHub
